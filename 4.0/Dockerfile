@@ -1,5 +1,7 @@
 FROM ruby:2.6-slim-buster
 
+RUN gem install nokogiri
+
 # explicitly set uid/gid to guarantee that it won't change in the future
 # the values 999:999 are identical to the current user/group id assigned
 RUN groupadd -r -g 999 redmine && useradd -r -g redmine -u 999 redmine
